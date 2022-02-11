@@ -1,7 +1,10 @@
+/*
+https://console.cloud.google.com/apis/credentials?project=webapitesty
+https://developers.google.com/identity/sign-in/web/sign-in
+*/
 window.addEventListener("load", function(){
-    document.getElementById('time').innerHTML = new Date().toString();  
+  document.getElementById('time').innerHTML = new Date().toString();  
 });
-
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
   console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.

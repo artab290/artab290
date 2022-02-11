@@ -1,15 +1,29 @@
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">  
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-  </head>
-  <body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="google-signin-client_id" content="177667034415-t8vqvkre632s7lvpr6edfjilgbm0m3vb.apps.googleusercontent.com">  
+
+  <title>Google Sign In</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
     <div id="time"></div>
+    <div class="container">
+    <h1>Google Login</h1>
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
-    <a href="#" onclick="signOut();">Sign out</a>
-    <script src="script.js"></script>
-  </body>
+    <div class="g-sign-out">
+        <a href="#" onclick="signOut();">Sign out</a>
+    </div>
+    <div id="user-details-wrapper">
+    </div>
+  </div>
+  <script src="https://apis.google.com/js/platform.js"></script>
+  <script src="main.js"></script>
+</body>
+
 </html>
 
