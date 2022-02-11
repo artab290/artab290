@@ -25,7 +25,7 @@ function getGProfile(){
   console.log(profile.getEmail());
 }
 function renderButton() {
-  gapi.signin2.render('my-signin2', {
+  gapi.signin2.render('g-signin2', {
     'scope': 'profile email',
     'width': 240,
     'height': 50,
@@ -35,3 +35,15 @@ function renderButton() {
     'onfailure': onFailure
   });
 }
+
+var auth2;
+var initClient = function() {
+  gapi.load('auth2', function(){
+
+    auth2 = gapi.auth2.init({
+        client_id: '177667034415-t8vqvkre632s7lvpr6edfjilgbm0m3vb.apps.googleusercontent.com'
+    });
+
+    auth2.attachClickHandler('signin-button', {}, onSuccess, onFailure);
+  });
+};

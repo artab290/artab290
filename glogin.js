@@ -16,8 +16,6 @@ function signOut0() {
   });
 }
 
-// No semicolons used here =)
-
 let auth2, googleUser
 
 let appStart = function() {
