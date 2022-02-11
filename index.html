@@ -2,12 +2,19 @@
 <html>
   <head>
     <base target="_top">
-    <?!= HtmlService.createHtmlOutputFromFile('css').getContent(); ?>
+    <style type="text/css">
+      body, html{
+        margin: 0; padding: 0; height: 100%; overflow: hidden;
+      }
+
+      #content{
+        position:absolute; left: 0; right: 0; bottom: 0; top: 0px; 
+      }
+    </style>    
   </head>
   <body>
-    <div id="emit"></div>
-    <div>Hello, BAGO!</div>
-    <div id="time"></div>
-    <?!= HtmlService.createHtmlOutputFromFile('js').getContent(); ?>
+    <iframe width="100%" height="100%" src="https://script.google.com/macros/s/AKfycbwL-3TcIBXh3g-n3Rm0fSyVKnO1KSj4t4NrjvKnkIY/dev
+    " />
   </body>
 </html>
+
