@@ -39,7 +39,6 @@ function renderButton() {
 var auth2;
 var initClient = function() {
   gapi.load('auth2', function(){
-
     auth2 = gapi.auth2.init({
         client_id: '177667034415-t8vqvkre632s7lvpr6edfjilgbm0m3vb.apps.googleusercontent.com'
     });
@@ -47,3 +46,16 @@ var initClient = function() {
     auth2.attachClickHandler('signin-button', {}, onSuccess, onFailure);
   });
 };
+/*
+gapi.auth.authorize(
+  {
+    'client_id': YOURCLIENTID,
+    'scope': SOMESCOPE,
+    'authuser': -1,
+    'prompt': 'select_account'
+  },
+  function (authResult) {
+      .......
+  }
+)
+*/

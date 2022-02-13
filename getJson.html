@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>getJSON</title>
+    <base target="_top">
+    <style type="text/css">
+      body, html{
+        margin: 0; padding: 0; height: 100%; overflow: hidden;
+      }
+      #content{
+        position:absolute; left: 0; right: 0; bottom: 0; top: 0px; 
+      }
+    </style>    
+  </head>
+  <body>
+    <div class="content">
+
+    </div>
+    <script>
+    /* 
+    https://jsonplaceholder.typicode.com/guide/ 
+    https://dmitripavlutin.com/javascript-fetch-async-await/
+    */
+      
+
+  window.addEventListener("load", function(){
+    httpGetAsync("https://jsonplaceholder.typicode.com/albums", cbAlbum)
+    //document.querySelector("#").style.display="none";  
+  });
+  function cbAlbum(r){
+    console.log("cbAlbum");
+    console.log(r);
+  }
+  function httpGetAsync(theUrl, callback){
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() { 
+    if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+      callback(xmlHttp.responseText);
+    }
+    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+    xmlHttp.send(null);
+  }        
+    </script>    
+  </body>
+</html>
+

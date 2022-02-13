@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="google-signin-client_id" content="177667034415-t8vqvkre632s7lvpr6edfjilgbm0m3vb.apps.googleusercontent.com">  
+  <title>Oauth2 web</title>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+  :root {
+    //background: yellow;
+  }
+  .content {
+    margin: 2vh 2vw;
+    max-width:80%;
+    max-height:80%;
+
+    /* transform: translate(-50%, -50%);*/
+  }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <div id="id"></div>
+    <div id="name"></div>
+    <div id="email"></div>
+    <div><img id="avatar" src=""/></div>
+  
+    <div id="sign-in" class="g-signin2" data-onsuccess="onSignIn"></div>
+    <button id="sign-out" type="button" class="btn btn-danger" onclick="signOut();">Sign out</button>  
+    <button type="button" class="btn btn-danger btn-sm">
+      <span class="glyphicon glyphicon-log-out"></span> Log out
+    </button>
+  </div>
+
+<script>
+  var auth2, profile;
+  window.addEventListener("load", function(){
+    gapi.auth2.init({client_id: '177667034415-t8vqvkre632s7lvpr6edfjilgbm0m3vb.apps.googleusercontent.com'});
+    auth2 = gapi.auth2.getAuthInstance();
+    profile = gapi.auth2.getAuthInstance().isSignedIn.get() ? auth2.currentUser.get().getBasicProfile() : {};  
+    document.querySelector("#sign-out").style.display="none";  
+  });  
+
+  function onSignIn(googleUser) {
+    //var profile = googleUser.getBasicProfile();
+    profile = gapi.auth2.getAuthInstance().isSignedIn.get() ? auth2.currentUser.get().getBasicProfile() : {};  
+    if (gapi.auth2.getAuthInstance().isSignedIn.get()) {
+      showProfile();
+      loginOption();
+    }
+  }  
+  function signOut() {
+    auth2.signOut().then(function () {
+      gapi.auth2.getAuthInstance().disconnect();
+      profile={};
+      showProfile();
+      loginOption();
+    });
+  }
+  function isObjEmpty(obj) {
+    return Object.keys(obj).length === 0;
+  }
+  function showProfile(){
+    var p = isObjEmpty(profile);
+    document.querySelector("#id").innerHTML = p? "" : profile.getId();
+    document.querySelector("#name").innerHTML = p? "" : profile.getName();
+    document.querySelector("#email").innerHTML = p? "" : profile.getEmail();
+    document.querySelector("#avatar").src = p? "" : profile.getImageUrl();
+    //document.getElementById("imageid").src="../template/save.png";
+
+  }
+  function loginOption(){
+    document.querySelector("#sign-out").style.display = gapi.auth2.getAuthInstance().isSignedIn.get()? "block" : "none";  
+    document.querySelector("#sign-in").style.display = gapi.auth2.getAuthInstance().isSignedIn.get()? "none" : "block";
+  }
+
+  function reEnterCred(){
+    var token = gapi.auth.getToken();
+    if (token) {
+      var accessToken = gapi.auth.getToken().access_token;
+      if (accessToken) {
+        // make http get request towards: 'https://accounts.google.com/o/oauth2/revoke?token=' + accessToken
+        // In angular you can do it like this:
+        // $http({
+        //   method: 'GET',
+        //   url: 'https://accounts.google.com/o/oauth2/revoke?token=' + accessToken
+        // });
+      }
+    }
+    gapi.auth.setToken(null);
+    gapi.auth.signOut();
+  }
+</script>
+</body>
+</html>
