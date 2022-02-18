@@ -1,5 +1,9 @@
 ### (main)[https://artab290.github.io/artab290/main.html] 👋
-
+'''
+git add .
+git commit -m "deploy"
+git push [origin main]
+'''
 <!--
 https://artab290.github.io/artab290/main.html
 - 🔭 I’m currently working on ...
