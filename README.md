@@ -12,10 +12,13 @@
 ```
 
 
-^note]:   
+[^note]:   
     Check the actions page for deployment error:   
     [https://github.com/artab290/artab290/actions](actions)   
-      
+
+    refer to basic readme reference:   
+    [https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax] (readme)
+
     
 
 
