@@ -7,15 +7,18 @@
 
 ```
     git add .  
-    git commit -m "deploy"  
+    git commit -m "deploy" [--force]  
     git push [origin main]  
 ```
-^note]:
-    Check the actions page for deployment error:
-    [https://github.com/artab290/artab290/actions](actions)  
+
+
+^note]:   
+    Check the actions page for deployment error:   
+    [https://github.com/artab290/artab290/actions](actions)   
+      
     
 
-    
+
 <!--
 https://artab290.github.io/artab290/main.html
 - 🔭 I’m currently working on ...
