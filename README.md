@@ -2,14 +2,20 @@
 ### (main)[https://artab290.github.io/artab290/main.html] 👋
 -->
 
+[https://artab290.github.io/artab290/](artab290)
 
-### [https://github.com/artab290/artab290/actions](actions)
-<code>
-git add .
-git commit -m "deploy"
-git push [origin main]
-</code>
 
+```
+    git add .  
+    git commit -m "deploy"  
+    git push [origin main]  
+```
+^note]:
+    Check the actions page for deployment error:
+    [https://github.com/artab290/artab290/actions](actions)  
+    
+
+    
 <!--
 https://artab290.github.io/artab290/main.html
 - 🔭 I’m currently working on ...
