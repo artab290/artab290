@@ -7,7 +7,7 @@
 
 ```
     git add .  
-    git commit -m "deploy" [--force]  
+    git commit -m "deploy as usual" [--force]  
     git push [origin main]  
 ```
 
