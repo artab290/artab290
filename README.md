@@ -1,12 +1,15 @@
 <!--
 ### (main)[https://artab290.github.io/artab290/main.html] 👋
 -->
-'''
+
+
+### [https://github.com/artab290/artab290/actions](actions)
+<code>
 git add .
 git commit -m "deploy"
 git push [origin main]
-'''
-### (actions)[https://github.com/artab290/artab290/actions]
+</code>
+
 <!--
 https://artab290.github.io/artab290/main.html
 - 🔭 I’m currently working on ...
