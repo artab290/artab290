@@ -11,7 +11,6 @@
     git push [origin main]  
 ```
 
-
 [^note]:   
     Check the actions page for deployment error:   
     [https://github.com/artab290/artab290/actions](actions)   
