@@ -1,3 +1,3 @@
-window.setTimeout(function(){
+window.setInterval(function(){
   document.getElementById('time').innerHTML = new Date().toString();  
-},100);
+},1000);
