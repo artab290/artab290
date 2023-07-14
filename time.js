@@ -1,3 +1,3 @@
-//window.addEventListener("load", function(){
+setTimeOut(()=>{
   document.getElementById('time').innerHTML = new Date().toString();  
-//});
+},100);
