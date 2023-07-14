@@ -3,7 +3,12 @@
 body {
   font-family: 'Roboto', arial, sans-serif;
 }
-
+#time{
+  display: block;
+  height:10vh;
+  width:100%;
+  border:1px solid red;
+}
 .container {
   text-align: center;
 }
