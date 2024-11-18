@@ -91,7 +91,7 @@ var buttonControl = function(command) {
     console.log("Removing Event Listener")
     document.getElementById('g-sign-in-wrapper').removeEventListener('click', signIn, true)
     document.getElementById('button-sign-out').style.display = ''
-    //document.getElementById('button-sign-in').style.display = ''
+    document.getElementById('button-sign-in').style.display = 'none'
   
   }
 }
