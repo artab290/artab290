@@ -80,18 +80,19 @@ var userChanged = function(user) {
 
 var buttonControl = function(command) {
   if (command) {
-    document.getElementById('sign-in-button-text').innerText = 'Sign in with Google'
+    document.getElementById('sign-in-button-text').innerText = 'LogIn with Google'
     document.getElementById('g-sign-in-wrapper').addEventListener('click', signIn, true)
     document.getElementById('button-sign-out').style.display = 'none'
-    document.getElementById('button-sign-in').style.display = 'block'
+    //document.getElementById('button-sign-in').style.display = 'block'
 
 
   } else {
     document.getElementById('sign-in-button-text').innerText = 'Signed in with Google'
-    console.log("Removing Event Listener")
+    //console.log("Removing Event Listener")
     document.getElementById('g-sign-in-wrapper').removeEventListener('click', signIn, true)
+    document.getElementById('g-sign-in-wrapper').style.display = 'none'
     document.getElementById('button-sign-out').style.display = ''
-    document.getElementById('button-sign-in').style.display = 'none'
+    
   
   }
 }
