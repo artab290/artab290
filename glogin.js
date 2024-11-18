@@ -116,7 +116,7 @@ var updateGoogleUser = function() {
     container.id = 'user-details-wrapper'
     var mainHeading = document.createElement('h1')
     mainHeading.className = 'main-heading'
-    mainHeading.textContent = 'User details'
+    mainHeading.textContent = 'User Details'
     var heading = document.createElement('h2')
     console.log(profile)
     heading.textContent = profile.getName()
