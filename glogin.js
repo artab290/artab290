@@ -87,7 +87,7 @@ var buttonControl = function(command) {
 
 
   } else {
-    document.getElementById('sign-in-button-text').innerText = 'Signed in with Google'
+    document.getElementById('sign-in-button-text').innerText = 'Logged In!'
     //console.log("Removing Event Listener")
     document.getElementById('g-sign-in-wrapper').removeEventListener('click', signIn, true)
     document.getElementById('g-sign-in-wrapper').style.display = 'none'
